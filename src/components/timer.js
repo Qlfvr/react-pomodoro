@@ -15,13 +15,11 @@ class Timer extends React.Component {
         };
 
         return (
-            <div>
-                <p>
-                    {`${formatTime(time.hours)}:${formatTime(
-                        time.minutes,
-                    )}:${formatTime(time.seconds)}`}
-                </p>
-            </div>
+            <p className={"timer"}>
+                {`${formatTime(time.hours)}:${formatTime(
+                    time.minutes,
+                )}:${formatTime(time.seconds)}`}
+            </p>
         );
     }
 }
