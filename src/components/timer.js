@@ -3,13 +3,13 @@ import React from "react";
 class Timer extends React.Component {
     render() {
         function formatTime(number) {
-            var formattedNumber = ("0" + number).slice(-2);
+            const formattedNumber = `0${number}`.slice(-2);
             return formattedNumber;
         }
 
         const time = {
             // days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((this.props.seconds / (60 * 60)) % 24),
+            hours: Math.floor(this.props.seconds / (60 * 60)),
             minutes: Math.floor((this.props.seconds / 60) % 60),
             seconds: Math.floor(this.props.seconds % 60),
         };
@@ -17,7 +17,9 @@ class Timer extends React.Component {
         return (
             <div>
                 <p>
-                    {formatTime(time.minutes) + ":" + formatTime(time.seconds)}
+                    {`${formatTime(time.hours)}:${formatTime(
+                        time.minutes,
+                    )}:${formatTime(time.seconds)}`}
                 </p>
             </div>
         );
