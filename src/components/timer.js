@@ -1,10 +1,8 @@
 import React from "react";
 // Import react-circular-progressbar module and styles
-import {
-    CircularProgressbarWithChildren,
-    buildStyles,
-} from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+import {CircularProgressbarWithChildren} from "react-circular-progressbar";
+// import "react-circular-progressbar/dist/styles.css";
+
 class Timer extends React.Component {
     render() {
         function formatTime(number) {
@@ -20,20 +18,20 @@ class Timer extends React.Component {
         };
 
         return (
-            <CircularProgressbarWithChildren
-                value={this.props.seconds}
-                maxValue={this.props.maxValue}
-                styles={buildStyles({
-                    strokeLinecap: "butt",
-                })}>
-                {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+            <div className={"timer"}>
+                <CircularProgressbarWithChildren
+                    counterClockwise
+                    value={this.props.seconds}
+                    maxValue={this.props.maxValue}>
+                    {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
 
-                <p className={"timer"}>
-                    {`${formatTime(time.hours)}:${formatTime(
-                        time.minutes,
-                    )}:${formatTime(time.seconds)}`}
-                </p>
-            </CircularProgressbarWithChildren>
+                    <p className={"timer-txt"}>
+                        {`${formatTime(time.hours)}:${formatTime(
+                            time.minutes,
+                        )}:${formatTime(time.seconds)}`}
+                    </p>
+                </CircularProgressbarWithChildren>
+            </div>
         );
     }
 }

@@ -1,64 +1,134 @@
-body{
-    background: rgb(2,0,36);
-    background: linear-gradient(169deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        169deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
 }
 
 .main {
-
-    width: 400px;
+    width: 800px;
     margin: auto;
     padding: 1rem;
     text-align: center;
-    border: solid 1px #fff;
-    border-radius: 3px;
+
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
-
-
 }
 
 .timer{
-
-    font-size: 3rem;
-    font-weight: 800;
-
+    width: 400px;
+    margin: auto auto 2rem auto;
 }
 
-.button{
-    width: 5rem ;
+.timer-txt {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.button {
+    width: 8rem;
     margin: 0.25rem;
-    border-radius: 5px;
+    border-radius: 100px;
     border: solid 1px #fff;
     background: none;
     color: inherit;
     font-family: inherit;
     font-size: inherit;
     padding: 0.5rem;
-
-
+    font-size: 1.5rem;
 }
 
+.button:hover{
 
-.button:active{
-  -webkit-box-shadow: inset 0px 0px 5px #242323;
-     -moz-box-shadow: inset 0px 0px 5px #242323;
-          box-shadow: inset 0px 0px 5px #242323;
-   outline: none;
+    background-color: rgba(255, 255, 255, 0.100);
 }
 
-.button:focus{
-
-           outline: none ;
-      
+.button:active {
+    -webkit-box-shadow: inset 0px 0px 5px #242323;
+    -moz-box-shadow: inset 0px 0px 5px #242323;
+    box-shadow: inset 0px 0px 5px #242323;
+    outline: none;
 }
 
-
+.button:focus {
+    outline: none;
+}
 
 .button::-moz-focus-inner {
     border: 0;
-  }
-  
-  
+}
+
+/*
+ * react-circular-progressbar styles
+ * All of the styles in this file are configurable!
+ */
+
+.CircularProgressbar {
+    /*
+     * This fixes an issue where the CircularProgressbar svg has
+     * 0 width inside a "display: flex" container, and thus not visible.
+     */
+    width: 100%;
+    /*
+     * This fixes a centering issue with CircularProgressbarWithChildren:
+     * https://github.com/kevinsqi/react-circular-progressbar/issues/94
+     */
+    vertical-align: middle;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: rgb(255, 255, 255);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease 0s;
+    stroke-width: 3px;
+}
+
+.CircularProgressbar .CircularProgressbar-trail {
+    stroke: rgb(128, 128, 128);
+    /* Used when trail is not full diameter, i.e. when props.circleRatio is set */
+    stroke-linecap: round;
+    stroke-width: 0.5px;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+    fill: #3e98c7;
+    font-size: 20px;
+    dominant-baseline: middle;
+    text-anchor: middle;
+}
+
+.CircularProgressbar .CircularProgressbar-background {
+    /* fill: #d6d6d6; */
+}
+
+/*
+   * Sample background styles. Use these with e.g.:
+   *
+   /* *   <CircularProgressbar
+   *     className="CircularProgressbar-inverted"
+   *     background
+   *     percentage={50}
+   *   /> */
+*/
+    .CircularProgressbar.CircularProgressbar-inverted
+    .CircularProgressbar-background {
+    fill: #3e98c7;
+}
+
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-text {
+    fill: #fff;
+}
+
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-path {
+    stroke: #fff;
+}
+
+.CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
+    stroke: transparent;
+}
