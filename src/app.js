@@ -1,11 +1,11 @@
 import React from "react";
 import Timer from "./components/timer";
 import Button from "./components/button";
+import TaskInput from "./components/task-input";
 
 class App extends React.Component {
     constructor() {
         super();
-
         this.state = {
             settingUp: true,
             seconds: 1500,
@@ -36,8 +36,6 @@ class App extends React.Component {
     // componentWillUnmount() {
     //     clearInterval(this.interval);
     // }
-
-    // button on clicks functions
 
     timerSwitch() {
         // currently off :
@@ -86,6 +84,8 @@ class App extends React.Component {
 
         return (
             <div className={"main"}>
+                <TaskInput />
+
                 <Timer
                     seconds={this.state.seconds}
                     maxValue={this.state.maxValue}
