@@ -29,21 +29,33 @@ class App extends React.Component {
             return state;
         });
     }
-    componentDidMount() {
-        this.interval = setInterval(() => this.tick(), 1000);
-    }
+    // componentDidMount() {
+    //     this.interval = setInterval(() => this.tick(), 1000);
+    // }
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
+    // componentWillUnmount() {
+    //     clearInterval(this.interval);
+    // }
 
     // button on clicks functions
 
     timerSwitch() {
-        this.setState(prevState => ({
-            play: !prevState.play,
-            settingUp: false,
-        }));
+        // currently off :
+
+        if (this.state.play === false) {
+            this.interval = setInterval(() => this.tick(), 1000);
+
+            this.setState(() => ({
+                play: true,
+                settingUp: false,
+            }));
+        } else {
+            clearInterval(this.interval);
+
+            this.setState(() => ({
+                play: false,
+            }));
+        }
     }
 
     timerIncrement() {
@@ -70,6 +82,8 @@ class App extends React.Component {
     }
 
     render() {
+        console.log("un rendu a été fait");
+
         return (
             <div className={"main"}>
                 <Timer
