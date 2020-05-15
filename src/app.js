@@ -20,22 +20,21 @@ class App extends React.Component {
     }
 
     tick() {
-        this.setState(state => {
+        this.setState((state) => {
             if (state.seconds > 0 && state.play === true) {
                 return {
                     seconds: state.seconds - 1,
                 };
+            } else if (this.state.seconds === 0) {
+                alert("test");
+                clearInterval(this.interval);
+
+                return state;
             }
+
             return state;
         });
     }
-    // componentDidMount() {
-    //     this.interval = setInterval(() => this.tick(), 1000);
-    // }
-
-    // componentWillUnmount() {
-    //     clearInterval(this.interval);
-    // }
 
     timerSwitch() {
         // currently off :
@@ -57,21 +56,23 @@ class App extends React.Component {
     }
 
     timerIncrement() {
-        this.setState(prevState => ({
+        this.setState((prevState) => ({
             seconds: prevState.seconds + 300,
             maxValue: prevState.seconds + 300,
         }));
     }
     timerDecrement() {
         if (this.state.seconds >= 300) {
-            this.setState(prevState => ({
+            this.setState((prevState) => ({
                 seconds: prevState.seconds - 300,
                 maxValue: prevState.seconds - 300,
             }));
         }
     }
     timerReset() {
+        clearInterval(this.interval);
         this.setState(() => ({
+        
             seconds: 1500,
             maxValue: 1500,
             play: false,
