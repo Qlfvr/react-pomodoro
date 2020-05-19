@@ -89,6 +89,12 @@ body.bg-break {
     font-style: italic;
 }
 
+.task-input::placeholder{
+
+    color: rgba(255, 255, 255, 0.3);
+
+}
+
 /*
  * react-circular-progressbar styles
  * All of the styles in this file are configurable!
