@@ -84,6 +84,11 @@ body.bg-break {
     color: white;
 }
 
+.task-input:disabled{
+
+    font-style: italic;
+}
+
 /*
  * react-circular-progressbar styles
  * All of the styles in this file are configurable!
