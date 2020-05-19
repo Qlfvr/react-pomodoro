@@ -3,9 +3,9 @@ import Timer from "./components/timer";
 import Button from "./components/button";
 import TaskInput from "./components/task-input";
 
-const defaultTimer = 2; //1500; //session time in seconds
-const defaultBreak = 1; //300; //short  break time in seconds
-const longBreak = 3; //1800; // long break time in seconds
+const defaultTimer = 1500; //session time in seconds
+const defaultBreak = 300; //short  break time in seconds
+const longBreak = 1800; // long break time in seconds
 
 class App extends React.Component {
     constructor() {
@@ -46,8 +46,8 @@ class App extends React.Component {
                     cpt: prevState.cpt + 1,
                 }));
 
-                //Create a log of the working session
-                sessionStorage.setItem(this.state.cpt, this.state.topic);
+                // //Create a log of the working session
+                // sessionStorage.setItem(this.state.cpt, this.state.topic);
 
                 // launch a break
 
