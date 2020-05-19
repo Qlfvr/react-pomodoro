@@ -165,7 +165,7 @@ class App extends React.Component {
 
                 {/* eslint-disable no-extra-parens */}
                 {this.state.settingUp ? (
-                    <Button handleClick={this.timerIncrement} label={"+5"} />
+                    <Button handleClick={this.timerDecrement} label={" -5 "} />
                 ) : (
                     ""
                 )}
@@ -177,7 +177,7 @@ class App extends React.Component {
                 <Button handleClick={this.timerReset} label={reset} />
 
                 {this.state.settingUp ? (
-                    <Button handleClick={this.timerDecrement} label={" -5 "} />
+                    <Button handleClick={this.timerIncrement} label={"+5"} />
                 ) : (
                     ""
                 )}
