@@ -4,6 +4,7 @@
   "description": "Simple Pomodoro APP developed with React",
   "main": "index.js",
   "scripts": {
+    "develop": "npx parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
